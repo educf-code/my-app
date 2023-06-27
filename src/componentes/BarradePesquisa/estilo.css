@@ -1,7 +1,7 @@
-.BarradePesquisa input[type=text] {
+.CaixadeTexto {
     float: right;
     padding: 6px;
     font-size: 17px;
     width: 800px;
     margin-top: 4%;
-}
+}  
