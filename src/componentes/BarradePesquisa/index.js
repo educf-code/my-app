@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import { useState } from 'react';
 {/* Estiliza a Caixa de Texto */}
 const CaixadeTextoContainer = styled.input`
     float: right;
@@ -13,9 +14,11 @@ const CaixadeTextoContainer = styled.input`
 `
 {/* Cria a Barra de Pesquisa */}
 function BarradePesquisa(){
+    const [termoPesquisado, settermoPesquisado] = useState('') {/* Criando o Estado e setando como vazio */}
     return(
         <div className='BarradePesquisa'> {/* Barra de Pesquisa */}
-            <CaixadeTextoContainer placeholder='Pesquisar'/>
+            <CaixadeTextoContainer placeholder='Pesquisar'
+            onBlur={evento => settermoPesquisado(evento.target.value)}/> {/* Setando o valor digitado */}
         </div>
     )
 }

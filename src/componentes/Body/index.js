@@ -1,12 +1,24 @@
-import './estilo.css'
+import React from 'react';
 import Logo from '../Logo'
 import BarradePesquisa from '../BarradePesquisa'
-function Body(){
+import styled from 'styled-components'
+{/* Estiliza o Body */}
+const BodyContainer = styled.body`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content:center;
+    column-gap: 10%;
+    margin-top: 12%;
+`
+{/* Cria o Body */}
+function Body(){ 
     return(
-        <body className='App-body'> {/* Tag com logo e searchbar */}
+    <BodyContainer> {/* Tag com logo e searchbar */}
         <Logo/> {/* Uso das funções como tags */}
         <BarradePesquisa/>
-      </body>
+    </BodyContainer>
     )
 }
 export default Body
