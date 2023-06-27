@@ -1,6 +1,6 @@
 import './App.css';
-import logo from './imagens/logobuscabanda.png'
-
+import BarradePesquisa from './componentes/Barra de pesquisa';
+import Logo from './componentes/Logo'
 function App() {
   return (
     <div className='App'>
@@ -8,13 +8,11 @@ function App() {
 
       </header>
       <body className='App-body'> {/* Tag com logo e searchbar */}
-      <div className ='logo'>  {/* Logo */}
-        <img src={logo}></img>
-      </div>
-
+        <Logo></Logo> {/* Uso das funções como tags */}
+        <BarradePesquisa></BarradePesquisa>
       </body>
     </div>
   );
 }
 
-export default App;
+export default App
