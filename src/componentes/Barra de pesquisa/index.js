@@ -3,7 +3,6 @@ import './estilo.css'
 function BarradePesquisa(){
     return(
         <div className='BarradePesquisa'> {/* Barra de Pesquisa */}
-
             <input type='text' placeholder='Pesquisar'></input>
         </div>
     )
