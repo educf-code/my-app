@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useState } from 'react';
+import { useSearchParams } from "react-router-dom";
 {/* Estiliza a Caixa de Texto */}
 const CaixadeTextoContainer = styled.input`
     float: right;
@@ -19,7 +20,8 @@ function BarradePesquisa(){
     return(
         <div className='BarradePesquisa'> {/* Barra de Pesquisa */}
             <CaixadeTextoContainer placeholder='Pesquisar'
-            onBlur={evento => settermoPesquisado(evento.target.value)}/> {/* Setando o valor digitado */}
+            onKeyDown={evento => {if(evento.key === 'Enter') 
+            {settermoPesquisado(evento.target.value)}}}/> {/* Setando o valor digitado */}
         </div>
     )
 }
