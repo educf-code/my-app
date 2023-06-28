@@ -14,7 +14,8 @@ const CaixadeTextoContainer = styled.input`
 `
 {/* Cria a Barra de Pesquisa */}
 function BarradePesquisa(){
-    const [termoPesquisado, settermoPesquisado] = useState('') {/* Criando o Estado e setando como vazio */}
+    {/* Criando o Estado e setando como vazio */}
+    const [termoPesquisado, settermoPesquisado] = useState('') 
     return(
         <div className='BarradePesquisa'> {/* Barra de Pesquisa */}
             <CaixadeTextoContainer placeholder='Pesquisar'

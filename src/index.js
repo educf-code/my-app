@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import BarradePesquisa from './componentes/BarradePesquisa';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/search" element={<p>search</p>}/> {/* Estabelece um caminho para /search na url */}
+        <Route path="/" element={<App />}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
