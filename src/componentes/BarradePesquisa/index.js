@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useState } from 'react';
-import { useSearchParams } from "react-router-dom";
-{/* Estiliza a Caixa de Texto */}
+{/* Estiliza a Caixa de Texto da Home */}
 const CaixadeTextoContainer = styled.input`
     float: right;
     padding: 6px;
