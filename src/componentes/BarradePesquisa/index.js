@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
 import { useState } from 'react';
+import getVideos from '../../busca/index.js';
+import { useNavigate } from 'react-router-dom';
+
 {/* Estiliza a Caixa de Texto da Home */}
 const CaixadeTextoContainer = styled.input`
     float: right;
@@ -15,12 +18,20 @@ const CaixadeTextoContainer = styled.input`
 {/* Cria a Barra de Pesquisa */}
 function BarradePesquisa(){
     {/* Criando o Estado e setando como vazio */}
-    const [termoPesquisado, settermoPesquisado] = useState('') 
+    const [termoPesquisado, settermoPesquisado] = useState('');
+    const navigate = useNavigate();
+    {/* Ao ser apertado o enter, passa para a rota de busca e define o valor digitado */}
+    function pesquisaVideo(evento){
+        if(evento.key === 'Enter'){
+            settermoPesquisado(evento.target.value);
+            const videos = getVideos(termoPesquisado);
+            navigate('/search')
+        }
+    } 
     return(
         <div className='BarradePesquisa'> {/* Barra de Pesquisa */}
             <CaixadeTextoContainer placeholder='Pesquisar'
-            onKeyDown={evento => {if(evento.key === 'Enter') 
-            {settermoPesquisado(evento.target.value)}}}/> {/* Setando o valor digitado */}
+            onKeyDown={pesquisaVideo}/> 
         </div>
     )
 }

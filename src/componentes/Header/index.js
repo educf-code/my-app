@@ -3,6 +3,7 @@ import Logo from '../Logo'
 import BarradePesquisa from '../BarradePesquisa'
 import styled from 'styled-components'
 
+
 {/* Estiliza o Header que será usado na pesquisa */}
 const HeaderContainer = styled.header`
     display: flex;    
@@ -19,6 +20,7 @@ function Header(){
     <HeaderContainer> {/* Tag com logo e searchbar */}
         <Logo/> {/* Uso das funções como tags */}
         <BarradePesquisa/>
+        
     </HeaderContainer>
     )
 }
