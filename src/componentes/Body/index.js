@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Logo'
-import BarradePesquisa from '../BarradePesquisa'
+import BarradePesquisa from '../Pesquisa'
 import styled from 'styled-components'
 {/* Estiliza o Body */}
 const BodyContainer = styled.body`
