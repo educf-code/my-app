@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../Logo'
-import BarradePesquisa from '../BarradePesquisa'
+import BarradePesquisa from '../Pesquisa'
 import styled from 'styled-components'
+
 
 
 {/* Estiliza o Header que será usado na pesquisa */}
@@ -15,12 +16,11 @@ const HeaderContainer = styled.header`
     margin-top: 2%;
 `
 {/* Cria o Header */}
-function Header(){ 
+function Header({setvideos}){ 
     return(
     <HeaderContainer> {/* Tag com logo e searchbar */}
         <Logo/> {/* Uso das funções como tags */}
-        <BarradePesquisa/>
-        
+        <BarradePesquisa setvideos={setvideos}/>     
     </HeaderContainer>
     )
 }
