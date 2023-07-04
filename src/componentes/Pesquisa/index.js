@@ -3,13 +3,17 @@ import axios from 'axios';
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 import Input from '../Input/index.js';
+const PesquisaContainer = styled.div``
 {/* Cria a Barra de Pesquisa */}
-function BarradePesquisa( {setvideos}){
+function BarradePesquisa( {setvideos, setinfos}){
     {/* Criando o Estado e setando como vazio */}
     const [termoPesquisado, settermoPesquisado] = useState('');
     const navigate = useNavigate();
     const youtubeAPI = axios.create({
         baseURL: 'https://www.googleapis.com/youtube/v3/search/'
+    })
+    const ticketmasterAPI = axios.create({
+        baseURL: 'https://app.ticketmaster.com/discovery/v2/attractions.json?'
     })
 
     {/* Fazendo a requisição */}
@@ -20,7 +24,7 @@ function BarradePesquisa( {setvideos}){
                     params: {
                         q: termoPesquisado,
                         part: 'snippet',
-                        key: 'AIzaSyCKkUjL9N-LNCWlFiWxSgV2W7oZqf33Nlc'
+                        key: 'AIzaSyBt8K5N0ifgJ3LTuFhPqh971sdYulNmAs8'
                     }
                 });
                 setvideos(response.data.items);
@@ -30,11 +34,29 @@ function BarradePesquisa( {setvideos}){
             }
         }
     }
+    async function fetchInfo() {
+        if (termoPesquisado !== '') {
+            try {
+                const response = await ticketmasterAPI.get('/', {
+                    params: {
+                        keyword: termoPesquisado,
+                        apikey: 'x9TAS10ua31T7nONj8geuWe7Cnp7OixA'
+                    }
+                });
+                setinfos(response.data._embedded);
+                
+            } catch (error) {
+                console.error('Erro na requisição à API do TicketMaster:', error);
+            }
+        }
+    }
+    
     {/* Dando inicio à requisição somente após a pesquisa */}
     function teclaApertada(event){ 
         if(event.key === 'Enter'){
             if (termoPesquisado !== ''){
                 fetchVideos();
+                fetchInfo();
                 navigate('/search');
             }
         }

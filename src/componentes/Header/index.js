@@ -16,11 +16,11 @@ const HeaderContainer = styled.header`
     margin-top: 2%;
 `
 {/* Cria o Header */}
-function Header({setvideos}){ 
+function Header({setvideos, setinfos}){ 
     return(
     <HeaderContainer> {/* Tag com logo e searchbar */}
         <Logo/> {/* Uso das funções como tags */}
-        <BarradePesquisa setvideos={setvideos}/>     
+        <BarradePesquisa setvideos={setvideos} setinfos={setinfos}/>     
     </HeaderContainer>
     )
 }
