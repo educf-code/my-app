@@ -6,8 +6,8 @@ import RespostaAPIYoutube from '../componentes/Resposta Youtube';
 import RespostaAPITicketMaster from '../componentes/Resposta TicketMaster';
 
 const AppContainer = styled.div`
-  min-height: 100vh;
-  min-width: 100vw;
+  height: fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
