@@ -3,12 +3,12 @@ import { styled } from "styled-components"
 {/* Estiliza a Caixa de Texto */}
 const Input = styled.input`
     float: right;
-    padding: 6px;
-    font-size: 17px;
-    width: 800px;
-    margin-top: 4%;
-    border-radius: 50px;
-    border: 3px solid rgb(79,144,253);
+    padding: 0.4vw;
+    font-size: 1.2vw;
+    width: 50vw;
+    border-radius: 6.6vw;
+    border: 0.2vw solid rgb(79,144,253);
+
 
 `
 

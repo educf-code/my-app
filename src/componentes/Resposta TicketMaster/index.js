@@ -14,6 +14,7 @@ const ResultadoTicketMasterContainer = styled.div`
     justify-content: center;
     column-gap: 3%;
     margin-top: 2%;
+    margin-bottom: 2%;
     img{
         width: 100%
     }
@@ -28,9 +29,9 @@ const ResultadoTicketMasterItens = styled.div`
     margin-left: 8%;
     column-gap: 10%;
     margin-top: 2%;
-    border: 2px solid rgb(79,144,253);
-    border-radius: 30px;
-    padding: 10px;
+    border: 0.15vw solid rgb(79,144,253);
+    border-radius: 2vw;
+    padding: 0.55vw;
     width: 25%
 
 `

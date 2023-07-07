@@ -13,11 +13,11 @@ const BodyContainer = styled.body`
     margin-top: 12%;
 `
 {/* Cria o Body */}
-function Body(){ 
+function Body({setvideos, setinfos}){ 
     return(
     <BodyContainer> {/* Tag com logo e searchbar */}
         <Logo/> {/* Uso das funções como tags */}
-        <BarradePesquisa/>
+        <BarradePesquisa setvideos={setvideos} setinfos={setinfos}/>
     </BodyContainer>
     )
 }
