@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom';
 import Input from '../Input/index.js';
 const PesquisaContainer = styled.div``
 {/* Cria a Barra de Pesquisa */}
 function BarradePesquisa( {setvideos, setinfos}){
     {/* Criando o Estado e setando como vazio */}
     const [termoPesquisado, settermoPesquisado] = useState('');
-    const navigate = useNavigate();
     const youtubeAPI = axios.create({
         baseURL: 'https://www.googleapis.com/youtube/v3/search/'
     })
@@ -16,7 +14,7 @@ function BarradePesquisa( {setvideos, setinfos}){
         baseURL: 'https://app.ticketmaster.com/discovery/v2/attractions.json?'
     })
 
-    {/* Fazendo a requisição */}
+    {/* Fazendo as requisições */}
     async function fetchVideos() {
         if (termoPesquisado !== '') {
             try {
@@ -51,18 +49,25 @@ function BarradePesquisa( {setvideos, setinfos}){
         }
     }
     
-    {/* Dando inicio à requisição somente após a pesquisa */}
+    {/* Dando inicio às requisições somente após a pesquisa */}
     function teclaApertada(event){ 
         if(event.key === 'Enter'){
             if (termoPesquisado !== ''){
                 fetchVideos();
                 fetchInfo();
-                navigate('/search');
+                
             }
         }
 
     
     }
+   {/* Permite que mais de uma pesquisa seja feita */}
+   useEffect(() => {
+    if (window.location.pathname === '/') {
+      fetchVideos();
+      fetchInfo();
+    }
+  }, [window.location.pathname]);
     
 {/* Setando o termo pesquisado com o valor digitado */}
     return(

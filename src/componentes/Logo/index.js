@@ -7,12 +7,21 @@ const LogoContainer = styled.div`
     justify-content: center;
     align-items:center;
     cursor: pointer;
+    img{
+        width: 31vw
+    }
 `
 {/* Função que mostra o logo */}
-function Logo(){
+function Logo({zeraVideos, teladeResultados}){
+    {/* Limpa a tela dos resultados ao clicar na logo ("volta para a página inicial") */}
+    const limpaTela = () => {
+        if (teladeResultados){
+            zeraVideos()
+        }
+    }
    return(
-    <LogoContainer>
-        <Link to='/'><img src={logo} alt='BuscaBanda'></img></Link>
+    <LogoContainer onClick={limpaTela}>
+        <img src={logo} alt="BuscaBanda"/>
         
         
 

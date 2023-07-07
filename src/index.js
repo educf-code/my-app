@@ -4,13 +4,11 @@ import './index.css';
 import Home from './rotas/Home';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Search from './rotas/Search';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/search" element={<Search/>}/> {/* Estabelece um caminho para /search na url */}
         <Route path="/" element={<Home />}/>
       </Routes>
     </BrowserRouter>
