@@ -7,8 +7,16 @@ const LogoContainer = styled.div`
     justify-content: center;
     align-items:center;
     cursor: pointer;
-    img{
-        width: 31vw
+    @media (max-width: 768px){
+        
+        img{
+            width: 0.5vw
+        }
+    }
+    @media (min-width: 768px){
+        img{
+            width: 31vw
+        }
     }
 `
 {/* Função que mostra o logo */}

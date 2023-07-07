@@ -7,10 +7,16 @@ import RespostaAPIYoutube from '../componentes/Resposta Youtube';
 import Header from '../componentes/Header';
 
 const AppContainer = styled.div`
-  height: 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px){
+    height: 100vh;
+  }
+  @media (min-width: 768px){
+    height: 140vh;
+
+  }
 `
 function Home() {
   const [videos, setvideos]= useState([])

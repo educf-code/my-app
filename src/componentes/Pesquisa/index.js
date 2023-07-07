@@ -22,7 +22,7 @@ function BarradePesquisa( {setvideos, setinfos}){
                     params: {
                         q: termoPesquisado,
                         part: 'snippet',
-                        key: 'AIzaSyBt8K5N0ifgJ3LTuFhPqh971sdYulNmAs8'
+                        key: 'AIzaSyAc6tZuU26anraevwZkMwVhU6Qm9YY7IHk'
                     }
                 });
                 setvideos(response.data.items);

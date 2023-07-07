@@ -4,36 +4,43 @@ import { Link } from "react-router-dom";
 import he from 'he'
 {/* Estilizando o Container que contém as respostas */}
 const ResultadoYoutubeContainer = styled.div`
-    display: flex;    
-    align-items: stretch;
-    align-content:center;
+    display: flex;
+    align-content: center;
     column-gap: 3%;
     margin-top: 5%;
     height: fit-content;
     width: fit-content;
-    margin-left: 3%;
     text-decoration: none;
+
+        @media (max-width: 768px){
+            flex-direction: column;  
+            border-bottom: 0.7vw solid rgb(79,144,253);
+        }
+        @media (min-width: 768px){ 
+            flex-direction: row;  
+            align-items: stretch;
+            margin-left: 3%;
+           
+            
+        }
+
 `
 {/* Estilizando o Container de cada resposta */}
 
 const ResultadoYoutubeItens = styled.div`
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     column-gap: 3%;
     margin-top: 2%;
-    height: 100vh;
-    border-radius: 2vw;
-    border: 0.7vw solid rgb(79,144,253);
+    height: fit-content;
     padding: 0.7vw;
     font-family: 'Belanosima';
     color: rgb(107,107,107);
     font-style: normal;
     text-decoration: none;
     justify-content: space-between;
-    
-
-
     h2{
         align-self: center;
         height: 6.2vw;
@@ -46,23 +53,47 @@ const ResultadoYoutubeItens = styled.div`
         height: 6.7vw;
         font-weight: normal;
         text-decoration: none;
+        margin-top: 20%
     }
-    p{
-        align-self: center;
-        font-weight: lighter; 
-    }
-    img{
-        margin-bottom: 20%;
-        max-height: 12vw;
-        text-decoration: none;
-        max-width: 100%;
+     @media (max-width: 768px){
+        border-top: 0.7vw solid rgb(79,144,253);
 
-    
+        p{
+            align-self: center;
+            font-weight: lighter;
+            margin-top: 20% 
+        }
+        img{
+            margin-bottom: 5%;
+            min-width: 90vw;
+            text-decoration: none;
+            
+
+        
+        }
+    }
+    @media (min-width: 768px){
+        border-radius: 2vw;
+        border: 0.7vw solid rgb(79,144,253);
+        max-width: 80%;
+        p{
+            align-self: center;
+            font-weight: lighter; 
+            margin-top: 35%
+        }
+        img{
+            margin-bottom: 20%;
+            max-height: 12vw;
+            text-decoration: none;
+            max-width: 100%;
+
+        
+        }
     }
 `
 function RespostaAPIYoutube({ videos }) {
     return (
-      <ResultadoYoutubeContainer>
+        <ResultadoYoutubeContainer>
         {/* Passando pelo array de respostas e obtendo cada item */}
         {videos.map((video) => {
         {/* Decodificando os caracteres HTML */}
@@ -81,7 +112,7 @@ function RespostaAPIYoutube({ videos }) {
             </Link>
           );
         })}
-              </ResultadoYoutubeContainer>
+        </ResultadoYoutubeContainer>
     );
   }
   

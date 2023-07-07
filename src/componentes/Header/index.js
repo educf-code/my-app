@@ -13,8 +13,19 @@ const HeaderContainer = styled.header`
     align-items: center;
     align-content:center;
     column-gap: 3%;
-    margin-top: 2%;
-    margin-left: 4%;
+    margin-top: 5%;
+    @media (max-width: 768px){
+        img{
+            width: 45vw
+        }
+        input{
+            width:40vw
+        }
+    }
+    @media (min-width: 768px){   
+        margin-top: 2%;
+        margin-left: 4%;
+    }
 `
 {/* Cria o Header */}
 function Header({setvideos, setinfos, videos}){ 

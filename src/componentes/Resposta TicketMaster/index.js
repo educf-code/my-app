@@ -9,30 +9,39 @@ import logoitunes from '../../imagens/logoitunes.png'
 
 {/* Estilizando o Container que contém as respostas */}
 const ResultadoTicketMasterContainer = styled.div`
-    display: flex;    
-    flex-direction: row;
-    justify-content: center;
-    column-gap: 3%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    img{
-        width: 100%
-    }
+
+  display: flex;    
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 3%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  img{
+    width: 100%
+  }
+
 `
 {/* Estilizando o Container de cada resposta */}
 
 const ResultadoTicketMasterItens = styled.div`
-    display: flex;    
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+ 
+  display: flex;    
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;    
+  column-gap: 10%;
+  border-radius: 2vw;
+  padding: 0.55vw;
+  @media (max-width: 768px){
+    width: 100%;
+    margin: 2%;
+  }
+  @media (min-width: 768px){
     margin-left: 8%;
-    column-gap: 10%;
     margin-top: 2%;
     border: 0.15vw solid rgb(79,144,253);
-    border-radius: 2vw;
-    padding: 0.55vw;
     width: 25%
+  }
 
 `
 {/* Passando pelo array de respostas e obtendo cada item */}
